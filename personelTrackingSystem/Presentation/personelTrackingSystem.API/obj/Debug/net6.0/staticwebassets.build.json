@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zTXaGmaJMKrL4HAh+cpTsvZ4j3oil5SLvf9liemsyqg=",
+  "Source": "personelTrackingSystem.API",
+  "BasePath": "_content/personelTrackingSystem.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using personelTrackingSystem.Domain.Entities.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,10 +10,8 @@ using System.Threading.Tasks;
 
 namespace personelTrackingSystem.Domain.Entities
 {
-    public class PersonelEntity
+    public class PersonelEntity : BaseEntity
     {
-        [Key]
-        public int PersonelId { get; set; }
         public string NameSurname {  get; set; }
         public string Phone { get; set; }
         public int DepartmentId { get; set; }

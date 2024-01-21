@@ -24,11 +24,11 @@ namespace personelTrackingSystem.Persistence.Migrations
 
             modelBuilder.Entity("personelTrackingSystem.Domain.Entities.AnnualLeaveEntity", b =>
                 {
-                    b.Property<int>("LeaveId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LeaveId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ApprovalStatus")
                         .IsRequired()
@@ -46,20 +46,20 @@ namespace personelTrackingSystem.Persistence.Migrations
                     b.Property<int>("PersonelId")
                         .HasColumnType("int");
 
-                    b.HasKey("LeaveId");
+                    b.HasKey("Id");
 
                     b.HasIndex("PersonelId");
 
-                    b.ToTable("AnnualLeaveEntity");
+                    b.ToTable("AnnualLeaves");
                 });
 
             modelBuilder.Entity("personelTrackingSystem.Domain.Entities.DepartmentEntity", b =>
                 {
-                    b.Property<int>("DepartmentId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("DepartmentHead")
                         .IsRequired()
@@ -69,18 +69,18 @@ namespace personelTrackingSystem.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("DepartmentId");
+                    b.HasKey("Id");
 
                     b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("personelTrackingSystem.Domain.Entities.EntryEntity", b =>
                 {
-                    b.Property<int>("EntryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EntryId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime?>("EntryDate")
                         .HasColumnType("datetime2");
@@ -95,20 +95,20 @@ namespace personelTrackingSystem.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EntryId");
+                    b.HasKey("Id");
 
                     b.HasIndex("PersonelId");
 
-                    b.ToTable("EntryEntity");
+                    b.ToTable("Entries");
                 });
 
             modelBuilder.Entity("personelTrackingSystem.Domain.Entities.LateArrivalEntity", b =>
                 {
-                    b.Property<int>("ArrivalId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArrivalId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ApprovalStatus")
                         .IsRequired()
@@ -131,20 +131,20 @@ namespace personelTrackingSystem.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ArrivalId");
+                    b.HasKey("Id");
 
                     b.HasIndex("PersonelID");
 
-                    b.ToTable("LateArrivalEntity");
+                    b.ToTable("LateArrivals");
                 });
 
             modelBuilder.Entity("personelTrackingSystem.Domain.Entities.PersonelEntity", b =>
                 {
-                    b.Property<int>("PersonelId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PersonelId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
@@ -160,7 +160,7 @@ namespace personelTrackingSystem.Persistence.Migrations
                     b.Property<int>("TeamId")
                         .HasColumnType("int");
 
-                    b.HasKey("PersonelId");
+                    b.HasKey("Id");
 
                     b.HasIndex("DepartmentId");
 
@@ -171,11 +171,11 @@ namespace personelTrackingSystem.Persistence.Migrations
 
             modelBuilder.Entity("personelTrackingSystem.Domain.Entities.ProjectEntity", b =>
                 {
-                    b.Property<int>("ProjectId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("PersonelId")
                         .HasColumnType("int");
@@ -194,20 +194,20 @@ namespace personelTrackingSystem.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ProjectId");
+                    b.HasKey("Id");
 
                     b.HasIndex("PersonelId");
 
-                    b.ToTable("ProjectEntity");
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("personelTrackingSystem.Domain.Entities.SalaryEntity", b =>
                 {
-                    b.Property<int>("SalaryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SalaryId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("IncreaseRate")
                         .HasColumnType("int");
@@ -221,20 +221,45 @@ namespace personelTrackingSystem.Persistence.Migrations
                     b.Property<DateTime>("SalaryDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("SalaryId");
+                    b.HasKey("Id");
 
                     b.HasIndex("PersonelId");
 
-                    b.ToTable("SalaryEntity");
+                    b.ToTable("Salaries");
+                });
+
+            modelBuilder.Entity("personelTrackingSystem.Domain.Entities.SystemEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AboutUs")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ApplicationName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Communication")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Systems");
                 });
 
             modelBuilder.Entity("personelTrackingSystem.Domain.Entities.TeamEntity", b =>
                 {
-                    b.Property<int>("TeamId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TeamId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -258,9 +283,38 @@ namespace personelTrackingSystem.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TeamId");
+                    b.HasKey("Id");
 
                     b.ToTable("TeamEntity");
+                });
+
+            modelBuilder.Entity("personelTrackingSystem.Domain.Entities.UserEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("EMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameSurname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("personelTrackingSystem.Domain.Entities.AnnualLeaveEntity", b =>

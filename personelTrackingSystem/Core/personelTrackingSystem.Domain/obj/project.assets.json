@@ -2020,11 +2020,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Core\\personelTrackingSystem.Domain\\personelTrackingSystem.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Core\\personelTrackingSystem.Domain\\personelTrackingSystem.Domain.csproj",
       "projectName": "personelTrackingSystem.Domain",
-      "projectPath": "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Core\\personelTrackingSystem.Domain\\personelTrackingSystem.Domain.csproj",
+      "projectPath": "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Core\\personelTrackingSystem.Domain\\personelTrackingSystem.Domain.csproj",
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Core\\personelTrackingSystem.Domain\\obj\\",
+      "outputPath": "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Core\\personelTrackingSystem.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using personelTrackingSystem.Domain.Entities.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace personelTrackingSystem.Domain.Entities
 {
-    public class EntryEntity
+    public class EntryEntity : BaseEntity
     {
-        [Key]
-        public int EntryId { get; set; }
         public int PersonelId { get; set; }
         public PersonelEntity Personel { get; set; }
         public DateTime? EntryDate { get; set; }

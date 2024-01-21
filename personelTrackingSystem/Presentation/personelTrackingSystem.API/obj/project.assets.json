@@ -1032,6 +1032,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.25",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25",
           "personelTrackingSystem.Domain": "1.0.0"
         },
         "compile": {
@@ -2875,11 +2877,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Presentation\\personelTrackingSystem.API\\personelTrackingSystem.API.csproj",
+      "projectUniqueName": "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Presentation\\personelTrackingSystem.API\\personelTrackingSystem.API.csproj",
       "projectName": "personelTrackingSystem.API",
-      "projectPath": "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Presentation\\personelTrackingSystem.API\\personelTrackingSystem.API.csproj",
+      "projectPath": "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Presentation\\personelTrackingSystem.API\\personelTrackingSystem.API.csproj",
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Presentation\\personelTrackingSystem.API\\obj\\",
+      "outputPath": "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Presentation\\personelTrackingSystem.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2901,11 +2903,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Core\\personelTrackingSystem.Application\\personelTrackingSystem.Application.csproj": {
-              "projectPath": "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Core\\personelTrackingSystem.Application\\personelTrackingSystem.Application.csproj"
+            "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Core\\personelTrackingSystem.Application\\personelTrackingSystem.Application.csproj": {
+              "projectPath": "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Core\\personelTrackingSystem.Application\\personelTrackingSystem.Application.csproj"
             },
-            "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Infrastructure\\personelTrackingSystem.Persistence\\personelTrackingSystem.Persistence.csproj": {
-              "projectPath": "C:\\Users\\pc\\Desktop\\personelTrackingSystem\\Infrastructure\\personelTrackingSystem.Persistence\\personelTrackingSystem.Persistence.csproj"
+            "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Infrastructure\\personelTrackingSystem.Persistence\\personelTrackingSystem.Persistence.csproj": {
+              "projectPath": "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Infrastructure\\personelTrackingSystem.Persistence\\personelTrackingSystem.Persistence.csproj"
             }
           }
         }

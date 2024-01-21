@@ -46,3 +46,17 @@ C:\Users\pc\Desktop\eCommerceAPI\Core\personelTrackingSystem.Domain\obj\Debug\ne
 C:\Users\pc\Desktop\eCommerceAPI\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.csproj.AssemblyReference.cache
 C:\Users\pc\Desktop\eCommerceAPI\Core\personelTrackingSystem.Domain\bin\Debug\net6.0\personelTrackingSystem.Domain.runtimeconfig.json
 C:\Users\pc\Desktop\eCommerceAPI\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.genruntimeconfig.cache
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\bin\Debug\net6.0\personelTrackingSystem.Domain.deps.json
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\bin\Debug\net6.0\personelTrackingSystem.Domain.runtimeconfig.json
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\bin\Debug\net6.0\personelTrackingSystem.Domain.dll
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\bin\Debug\net6.0\personelTrackingSystem.Domain.pdb
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.AssemblyInfo.cs
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.dll
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\refint\personelTrackingSystem.Domain.dll
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.pdb
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\personelTrackingSystem.Domain.genruntimeconfig.cache
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Core\personelTrackingSystem.Domain\obj\Debug\net6.0\ref\personelTrackingSystem.Domain.dll

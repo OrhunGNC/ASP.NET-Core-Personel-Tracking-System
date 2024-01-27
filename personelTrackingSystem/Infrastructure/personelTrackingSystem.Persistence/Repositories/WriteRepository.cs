@@ -14,47 +14,36 @@ namespace personelTrackingSystem.Persistence.Repositories
     public class WriteRepository<T> : IWriteRepository<T> where T : BaseEntity
     {
         private readonly personelTrackingSystemDbContext _context;
+        internal DbSet<T> _dbSet;
         public WriteRepository(personelTrackingSystemDbContext context)
         {
             _context = context;
+            _dbSet = _context.Set<T>();
         }
 
         public DbSet<T> Table => _context.Set<T>();
 
-        public async Task<bool> AddAsync(T model)
+        public void Add(T entity)
         {
-            EntityEntry<T> entityEntry= await Table.AddAsync(model);
-            return entityEntry.State == EntityState.Added;
-        }
-        public async Task<bool> AddRangeAsync(List<T> datas)
-        {
-            await Table.AddRangeAsync(datas);
-            return true;
+            _dbSet.Add(entity);
         }
 
-        public bool Remove(T model)
+        public void Remove(T entity)
         {
-            EntityEntry<T> entityEntry=Table.Remove(model);
-            return entityEntry.State == EntityState.Deleted;
-        }
-        public bool RemoveRange(List<T> datas)
-        {
-            Table.RemoveRange(datas);
-            return true;
-        }
-        public async Task<bool> RemoveAsync(int id)
-        {
-            T model = await Table.FirstOrDefaultAsync(p => p.Id == id);
-            return Remove(model);
+            _dbSet.Remove(entity);
         }
 
-        public bool Update(T model)
+        public void RemoveRange(IEnumerable<T> entities)
         {
-            EntityEntry entityEntry=Table.Update(model);
-            return entityEntry.State == EntityState.Modified;
+            _dbSet.RemoveRange(entities);
         }
-        public async Task<int> SaveAsync() => await _context.SaveChangesAsync();
 
-        
+        public void Update(T entity)
+        {
+            _dbSet.Update(entity);
+        }
+
+
+
     }
 }

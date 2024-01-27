@@ -25,6 +25,7 @@ using personelTrackingSystem.Application.Repositories.Team;
 using personelTrackingSystem.Persistence.Repositories.Team;
 using personelTrackingSystem.Application.Repositories.User;
 using personelTrackingSystem.Persistence.Repositories.User;
+using personelTrackingSystem.Persistence.Contexts;
 
 namespace personelTrackingSystem.Persistence
 {
@@ -50,6 +51,8 @@ namespace personelTrackingSystem.Persistence
             services.AddScoped<ITeamWriteRepository,TeamWriteRepository>();
             services.AddScoped<IUserReadRepository,UserReadRepository>();
             services.AddScoped<IUserWriteRepository,UserWriteRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<personelTrackingSystemDbContext>();
         }
     }
 }

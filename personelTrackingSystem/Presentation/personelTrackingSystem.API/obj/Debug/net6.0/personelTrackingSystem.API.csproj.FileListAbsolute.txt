@@ -148,3 +148,8 @@ C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackin
 C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Presentation\personelTrackingSystem.API\obj\Debug\net6.0\personelTrackingSystem.API.pdb
 C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Presentation\personelTrackingSystem.API\obj\Debug\net6.0\personelTrackingSystem.API.genruntimeconfig.cache
 C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Presentation\personelTrackingSystem.API\obj\Debug\net6.0\ref\personelTrackingSystem.API.dll
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Presentation\personelTrackingSystem.API\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Presentation\personelTrackingSystem.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Presentation\personelTrackingSystem.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Presentation\personelTrackingSystem.API\bin\Debug\net6.0\personelTrackingSystem.Infrastructure.dll
+C:\Users\pc\Desktop\github\ASP.NET-Core-Personel-Tracking-System\personelTrackingSystem\Presentation\personelTrackingSystem.API\bin\Debug\net6.0\personelTrackingSystem.Infrastructure.pdb

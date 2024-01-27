@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xXkMP0KmARDtnbbeTDAQrY1DueXOWhprd6T70VldrZO52coBJeU7/ENijkwh0mmwT1wsyGwFYkvbJ0mu9sZsPg==",
+  "dgSpecHash": "YwYhylumKdtE93lKwU/rkUw6ZXbAULCLSCBLPZO9tI0buM4ha6VEU4pPRe3J2Vj4R8cRzyzaEWXykxMgy0jhOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Desktop\\github\\ASP.NET-Core-Personel-Tracking-System\\personelTrackingSystem\\Infrastructure\\personelTrackingSystem.Persistence\\personelTrackingSystem.Persistence.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.4.0\\fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.4.0\\fluentvalidation.dependencyinjectionextensions.10.4.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

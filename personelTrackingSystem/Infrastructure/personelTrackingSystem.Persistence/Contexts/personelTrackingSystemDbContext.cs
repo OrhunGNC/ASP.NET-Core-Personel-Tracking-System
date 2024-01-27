@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using personelTrackingSystem.Domain.Entities.Common;
+using personelTrackingSystem.Application.ViewModels;
 
 namespace personelTrackingSystem.Persistence.Contexts
 {
@@ -22,7 +23,6 @@ namespace personelTrackingSystem.Persistence.Contexts
         public DbSet<SalaryEntity> Salaries { get; set; }
         public DbSet<SystemEntity> Systems { get; set; }
         public DbSet<UserEntity> Users { get; set; }
-
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var datas = ChangeTracker.Entries<BaseEntity>();
@@ -32,6 +32,7 @@ namespace personelTrackingSystem.Persistence.Contexts
                 {
                     EntityState.Added => data.Entity.CreatedDate=DateTime.UtcNow,
                     EntityState.Modified=>data.Entity.UpdatedDate=DateTime.UtcNow,
+                    _=>DateTime.UtcNow
                 };
             }
             return await base.SaveChangesAsync(cancellationToken);

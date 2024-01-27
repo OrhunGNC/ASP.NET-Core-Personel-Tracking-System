@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using personelTrackingSystem.Application.Repositories.Personel;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using personelTrackingSystem.Application.Repositories;
+using personelTrackingSystem.Application.ViewModels;
 using personelTrackingSystem.Domain.Entities;
+using System.Linq.Expressions;
+using System.Net;
 using System.Numerics;
 
 namespace personelTrackingSystem.API.Controllers
@@ -10,18 +14,88 @@ namespace personelTrackingSystem.API.Controllers
     [ApiController]
     public class PersonelController : ControllerBase
     {
-        private readonly IPersonelReadRepository _personelReadRepository;
-        private readonly IPersonelWriteRepository _personelWriteRepository;
-        public PersonelController(IPersonelReadRepository personelReadRepository, IPersonelWriteRepository personelWriteRepository)
+        private readonly IUnitOfWork _uow;
+        public PersonelController(IUnitOfWork uow)
         {
-            _personelReadRepository = personelReadRepository;
-            _personelWriteRepository = personelWriteRepository;
+            _uow = uow;
+        }
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            try
+            {
+                var personelList = _uow.personelReadRepository.GetAll();
+                return Ok(personelList);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, $"Interval Server Error: {ex.Message}");
+            }
+
+            
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public IActionResult GetById(int id)
         {
-           PersonelEntity personel= await _personelReadRepository.GetByIdAsync(id);
-            return Ok(personel);
+            var personel = _uow.personelReadRepository.GetFirstOrDefault(x => x.Id == id);
+            if(personel == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(personel);
+            }
+        }
+        [HttpPost]
+        public IActionResult Create([FromBody] PersonelEntityVM personelVM)
+        {
+            var personelEntity = new PersonelEntity
+            {
+                CreatedDate= DateTime.Now,
+                NameSurname=personelVM.NameSurname,
+                Phone = personelVM.Phone,
+                DepartmentId=personelVM.DepartmentId,
+                TeamId=personelVM.TeamId,
+            };
+            _uow.personelWriteRepository.Add(personelEntity);
+            _uow.Save();
+            return Ok();
+        }
+        [HttpPut]
+        public IActionResult Update([FromBody] PersonelEntityVM personelVM)
+        {
+
+            var personelEntity = new PersonelEntity
+            {
+                Id = personelVM.Id,
+                CreatedDate = personelVM.CreatedDate,
+                UpdatedDate= DateTime.Now,
+                NameSurname = personelVM.NameSurname,
+                Phone = personelVM.Phone,
+                DepartmentId = personelVM.DepartmentId,
+                TeamId = personelVM.TeamId,
+            };
+            _uow.personelWriteRepository.Update(personelEntity);
+            _uow.Save();
+            return Ok();
+        }
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var personel = _uow.personelReadRepository.GetFirstOrDefault(x => x.Id == id);
+            if (personel == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _uow.personelWriteRepository.Remove(personel);
+                _uow.Save();
+                return NoContent();
+            }
+
         }
     }
 }

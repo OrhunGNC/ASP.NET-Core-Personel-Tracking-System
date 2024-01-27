@@ -16,6 +16,6 @@ namespace personelTrackingSystem.Domain.Entities
         public string LateArrivalTime { get; set; }
         public string Reason { get; set; }
         public string ApprovalStatus { get; set; }
-        public string ?Notes { get; set; }
+        public string? Notes { get; set; }
     }
 }

@@ -56,8 +56,8 @@ namespace personelTrackingSystem.API.Controllers
                 CreatedDate= DateTime.Now,
                 NameSurname=personelVM.NameSurname,
                 Phone = personelVM.Phone,
-                DepartmentId=personelVM.DepartmentId,
-                TeamId=personelVM.TeamId,
+                Gender = personelVM.Gender,
+                DepartmentId = personelVM.DepartmentId,
             };
             _uow.personelWriteRepository.Add(personelEntity);
             _uow.Save();
@@ -73,9 +73,9 @@ namespace personelTrackingSystem.API.Controllers
                 CreatedDate = personelVM.CreatedDate,
                 UpdatedDate= DateTime.Now,
                 NameSurname = personelVM.NameSurname,
+                Gender = personelVM.Gender,
                 Phone = personelVM.Phone,
                 DepartmentId = personelVM.DepartmentId,
-                TeamId = personelVM.TeamId,
             };
             _uow.personelWriteRepository.Update(personelEntity);
             _uow.Save();

@@ -21,7 +21,7 @@ function App() {
     ),
   }));
   return (
-    <div className="container-fluid">
+    <div>
       <Layout>
         <Header
           style={{
@@ -30,6 +30,7 @@ function App() {
           }}
         >
           <div className="demo-logo" />
+          <Link style={{width:'7%',height:'90%',marginRight:'8%'}} to={'/'}><img src="../img/toplogo.png" alt="wissen-logo"  /></Link>
           <Menu
             theme="dark"
             mode="horizontal"
@@ -38,14 +39,12 @@ function App() {
             style={{
               flex: 1,
               minWidth: 0,
+              fontSize:'1.25em',
+              color:'white'
             }}
           />
         </Header>
-        <Content
-          style={{
-            padding: "0 48px",
-          }}
-        >
+        <Content>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
@@ -62,7 +61,7 @@ function App() {
             position:'fixed'
           }}
         >
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+          Ant Design ©{new Date().getFullYear()} Created by Orhun Cem Gença
         </Footer>
       </Layout>
     </div>

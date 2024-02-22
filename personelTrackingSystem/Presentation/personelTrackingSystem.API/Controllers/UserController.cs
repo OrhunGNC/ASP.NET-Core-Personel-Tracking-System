@@ -53,7 +53,8 @@ namespace personelTrackingSystem.API.Controllers
                 EMail= userVM.EMail,
                 Password= userVM.Password,
                 NameSurname= userVM.NameSurname,
-                Phone= userVM.Phone
+                Phone= userVM.Phone,
+                Role=userVM.Role
             };
             _uow.userWriteRepository.Add(userEntity);
             _uow.Save();
@@ -71,8 +72,8 @@ namespace personelTrackingSystem.API.Controllers
                 EMail = userVM.EMail,
                 Password = userVM.Password,
                 NameSurname = userVM.NameSurname,
-                Phone = userVM.Phone
-
+                Phone = userVM.Phone,
+                Role = userVM.Role
             };
             _uow.userWriteRepository.Update(userEntity);
             _uow.Save();

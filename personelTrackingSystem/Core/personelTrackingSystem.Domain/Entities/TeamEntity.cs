@@ -12,7 +12,6 @@ namespace personelTrackingSystem.Domain.Entities
     {
         public string TeamName { get; set; }
         public DateTime CreationDate {  get; set; }
-        public ICollection<PersonelEntity> PersonelEntities { get; set; }
         public string TeamStatus { get; set; }
         public string Description { get; set; }
         public string PriorityLevel { get; set; }

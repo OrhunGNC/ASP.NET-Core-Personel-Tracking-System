@@ -14,5 +14,6 @@ namespace personelTrackingSystem.Domain.Entities
         public string Password { get; set; }
         public string NameSurname { get; set; }
         public string Phone { get; set; }
+        public string Role { get; set; }
     }
 }

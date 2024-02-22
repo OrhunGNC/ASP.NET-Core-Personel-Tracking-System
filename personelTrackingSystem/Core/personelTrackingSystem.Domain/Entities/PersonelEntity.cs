@@ -14,10 +14,10 @@ namespace personelTrackingSystem.Domain.Entities
     {
         public string NameSurname {  get; set; }
         public string Phone { get; set; }
+
+        public bool Gender { get; set; }
         public int DepartmentId { get; set; }
         public DepartmentEntity Department { get; set; }
-        public int TeamId { get; set; }
-        public TeamEntity Team { get; set; }
         public ICollection<EntryEntity> EntryEntities { get; set; } 
         public ICollection<ProjectEntity> ProjectEntities { get; set; }
         public ICollection<SalaryEntity> SalaryEntities { get; set;}

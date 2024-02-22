@@ -13,9 +13,9 @@ namespace personelTrackingSystem.Application.ViewModels
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public string NameSurname { get; set; }
+        public bool Gender { get; set; }
         public string Phone { get; set; }
         public int DepartmentId { get; set; }
-        public int TeamId { get; set; }
 
 
     }

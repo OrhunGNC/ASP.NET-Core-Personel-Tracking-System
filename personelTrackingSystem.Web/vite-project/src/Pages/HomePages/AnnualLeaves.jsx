@@ -396,7 +396,7 @@ const AnnualLeaves = () => {
       rules={[
         {
           required: true,
-          message: 'Please input personel salary!',
+          message: 'Please input id!',
         },
       ]}
       hidden
@@ -409,7 +409,7 @@ const AnnualLeaves = () => {
       rules={[
         {
           required: true,
-          message: 'Please input personel salary!',
+          message: 'Please input personel id!',
         },
       ]}
     >
@@ -421,6 +421,7 @@ const AnnualLeaves = () => {
       rules={[
         {
           required: true,
+          message: 'Please input leave start date!',
           
         },
       ]}
@@ -434,7 +435,7 @@ const AnnualLeaves = () => {
       rules={[
         {
           required: true,
-          message: 'Please input salary date!',
+          message: 'Please input leave end date!',
         },
       ]}
     >
@@ -459,6 +460,7 @@ const AnnualLeaves = () => {
       rules={[
         {
           required: true,
+          message: 'Please input the application date!',
           
         },
       ]}
@@ -469,13 +471,13 @@ const AnnualLeaves = () => {
   </Form>
       </Modal>
       <Modal
-        title="Bu maaş verisini silmek istediğinize emin misiniz?"
+        title="Are you sure you want to delete this data?"
         open={openDelete}
         onOk={deleteContent}
         onCancel={hideModal}
 
       >
-        <p>Bu işlem geri alınamayacaktır!</p>
+        <p>This action cannot be undone!</p>
 
       </Modal>
     </>

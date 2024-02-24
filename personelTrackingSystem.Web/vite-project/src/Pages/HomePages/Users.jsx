@@ -389,13 +389,13 @@ const Users = () => {
   </Form>
       </Modal>
       <Modal
-        title="Bu maaş verisini silmek istediğinize emin misiniz?"
+        title="Are you sure you want to delete this data?"
         open={openDelete}
         onOk={deleteContent}
         onCancel={hideModal}
 
       >
-        <p>Bu işlem geri alınamayacaktır!</p>
+        <p>This action cannot be undone!</p>
 
       </Modal>
     </>

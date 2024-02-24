@@ -223,10 +223,28 @@ const Salaries = () => {
           })
           .catch((error)=>console.error(error));
       }
+      const [paginationSize, setPaginationSize] = useState('medium'); // varsayılan boyut 'medium'
+
+
+  const checkScreenSize = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 768) { 
+      setPaginationSize(10); 
+    } else {
+      setPaginationSize(7); 
+    }
+  };
+
+  
+  useEffect(() => {
+    checkScreenSize(); 
+    window.addEventListener('resize', checkScreenSize); 
+    return () => window.removeEventListener('resize', checkScreenSize); 
+  }, []);
   return (
     <>
     <Button type='primary' onClick={()=>setOpen(true)}  style={{width:'20%',marginBottom:'1%'}}>Add New Salary</Button>
-    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:'10'}} />
+    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:paginationSize}} />
     <Modal
         title="Add New Salary"
         centered
@@ -417,13 +435,13 @@ const Salaries = () => {
   </Form>
       </Modal>
       <Modal
-        title="Bu maaş verisini silmek istediğinize emin misiniz?"
+        title="Are you sure you want to delete this data?"
         open={openDelete}
         onOk={deleteContent}
         onCancel={hideModal}
 
       >
-        <p>Bu işlem geri alınamayacaktır!</p>
+        <p>This action cannot be undone!</p>
 
       </Modal>
     </>

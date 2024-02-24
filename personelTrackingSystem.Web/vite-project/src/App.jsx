@@ -58,7 +58,7 @@ function App() {
             bottom:'0',
             left:'0',
             right:'0',
-            position:'fixed'
+            position:'fixed',
           }}
         >
           Ant Design ©{new Date().getFullYear()} Created by Orhun Cem Gença

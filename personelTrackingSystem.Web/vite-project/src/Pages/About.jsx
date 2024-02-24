@@ -1,61 +1,50 @@
-import React, { useState,useEffect } from "react";
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import {  Layout, Menu, theme  } from 'antd';
-const { Content,  Sider } = Layout;
-const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
-  const key = String(index + 1);
-  
-  return {
-    key: `sub${key}`,
-    icon: React.createElement(icon),
-    label: `subnav ${key}`,
-    children: new Array(4).fill(null).map((_, j) => {
-      const subKey = index * 4 + j + 1;
-      return {
-        key: subKey,
-        label: `option${subKey}`,
-      };
-    }),
-  };
-});
-const About = ({handleMenuItems}) => {
+import React, { useState, useEffect } from "react";
+import {
+  LaptopOutlined,
+  NotificationOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
+import { Layout, Menu, theme } from "antd";
+import Carousel from "./Component/Carousel";
+const { Content, Sider } = Layout;
+const About = ({ handleMenuItems }) => {
+  const [about, setAbout] = useState("");
+  const uri = "https://localhost:7010/";
+
+  useEffect(() => {
+    fetch(`${uri}api/System`)
+      .then((response) => response.json())
+      .then((data) => setAbout(data[0].aboutUs));
+  }, []);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+  const imageSources = [
+    "../img/wissen_featured.jpg",
+    "../img/8fce3848eeec452e8b346fbf0ac808df3- WİSSEN TECH.png"
+  ];
+
   return (
     <Layout
-          style={{
-            padding: '24px 0',
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
-          <Sider
-            style={{
-              background: colorBgContainer,
-            }}
-            width={200}
-          >
-            <Menu
-              mode="inline"
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              style={{
-                height: '100%',
-              }}
-              items={items2}
-            />
-          </Sider>
-          <Content
-            style={{
-              padding: '0 24px',
-              minHeight: 280,
-            }}
-          >
-            About
-          </Content>
-        </Layout>
-  )
-}
+      style={{
+        background: colorBgContainer,
+        borderRadius: borderRadiusLG,
+      }}
+    >
+      <Content
+        style={{
+          minHeight: 280,
+        }}
+      >
+        <div className="container" style={{textAlign:'center'}}>
+        <Carousel imageSources={imageSources} />
+        {about}
+        </div>
+      
 
-export default About
+      </Content>
+    </Layout>
+  );
+};
+
+export default About;

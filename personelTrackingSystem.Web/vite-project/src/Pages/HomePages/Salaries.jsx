@@ -223,15 +223,19 @@ const Salaries = () => {
           })
           .catch((error)=>console.error(error));
       }
-      const [paginationSize, setPaginationSize] = useState('medium'); // varsayılan boyut 'medium'
+      const [paginationSize, setPaginationSize] = useState(''); 
 
 
   const checkScreenSize = () => {
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 768) { 
+    const screenHeight = window.innerHeight;
+    if (screenHeight>= 900) { 
       setPaginationSize(10); 
-    } else {
-      setPaginationSize(7); 
+    }
+    else if(screenHeight<900 && screenHeight>=720){
+      setPaginationSize(7);
+    } 
+    else {
+      setPaginationSize(5); 
     }
   };
 
@@ -241,6 +245,7 @@ const Salaries = () => {
     window.addEventListener('resize', checkScreenSize); 
     return () => window.removeEventListener('resize', checkScreenSize); 
   }, []);
+
   return (
     <>
     <Button type='primary' onClick={()=>setOpen(true)}  style={{width:'20%',marginBottom:'1%'}}>Add New Salary</Button>

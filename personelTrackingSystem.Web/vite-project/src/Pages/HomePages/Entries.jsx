@@ -232,12 +232,30 @@ const Entries = () => {
           })
           .catch((error)=>console.error(error));
       }
+      const [paginationSize, setPaginationSize] = useState(''); 
+
+
+  const checkScreenSize = () => {
+    const screenHeight = window.innerHeight;
+    if (screenHeight>= 900) { 
+      setPaginationSize(10); 
+    } else {
+      setPaginationSize(7); 
+    }
+  };
+
+  
+  useEffect(() => {
+    checkScreenSize(); 
+    window.addEventListener('resize', checkScreenSize); 
+    return () => window.removeEventListener('resize', checkScreenSize); 
+  }, []);
   return (
     <>
     <Button type='primary' onClick={()=>setOpen(true)}  style={{width:'20%',marginBottom:'1%'}}>Add New Entry</Button>
-    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:'10'}} />
+    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:paginationSize}} />
     <Modal
-        title="Add New Salary"
+        title="Add New Entry"
         centered
         open={open}
         onOk={handleNew}
@@ -271,7 +289,7 @@ const Entries = () => {
       rules={[
         {
           required: true,
-          message: 'Please input personel salary!',
+          message: 'Please input personel id!',
         },
       ]}
     >
@@ -310,7 +328,7 @@ const Entries = () => {
       rules={[
         {
           required: true,
-          message: 'Please input salary date!',
+          message: 'Please input exit date!',
         },
       ]}
     >
@@ -333,7 +351,7 @@ const Entries = () => {
   </Form>
       </Modal>
       <Modal
-        title="Update Salary"
+        title="Update Entry"
         centered
         open={openNew}
         onOk={handleUpdate}
@@ -367,7 +385,7 @@ const Entries = () => {
       rules={[
         {
           required: true,
-          message: 'Please input personel salary!',
+          message: 'Please input annual leave id!',
         },
       ]}
       hidden
@@ -380,7 +398,7 @@ const Entries = () => {
       rules={[
         {
           required: true,
-          message: 'Please input personel salary!',
+          message: 'Please input personel id!',
         },
       ]}
     >
@@ -405,7 +423,7 @@ const Entries = () => {
       rules={[
         {
           required: true,
-          message: 'Please input salary date!',
+          message: 'Please input exit date!',
         },
       ]}
     >

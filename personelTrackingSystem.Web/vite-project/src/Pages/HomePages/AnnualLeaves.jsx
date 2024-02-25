@@ -249,12 +249,30 @@ const AnnualLeaves = () => {
           })
           .catch((error)=>console.error(error));
       }
+      const [paginationSize, setPaginationSize] = useState(''); 
+
+
+  const checkScreenSize = () => {
+    const screenHeight = window.innerHeight;
+    if (screenHeight>= 900) { 
+      setPaginationSize(10); 
+    } else {
+      setPaginationSize(7); 
+    }
+  };
+
+  
+  useEffect(() => {
+    checkScreenSize(); 
+    window.addEventListener('resize', checkScreenSize); 
+    return () => window.removeEventListener('resize', checkScreenSize); 
+  }, []);
   return (
     <>
     <Button type='primary' onClick={()=>setOpen(true)}  style={{width:'20%',marginBottom:'1%'}}>Add New Annual Leave</Button>
-    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:'10'}} />
+    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:paginationSize}} />
     <Modal
-        title="Add New Salary"
+        title="Add New Annual Leave"
         centered
         open={open}
         onOk={handleNew}
@@ -288,7 +306,7 @@ const AnnualLeaves = () => {
       rules={[
         {
           required: true,
-          message: 'Please input personel salary!',
+          message: 'Please input personel id!',
         },
       ]}
     >
@@ -327,7 +345,7 @@ const AnnualLeaves = () => {
       rules={[
         {
           required: true,
-          message: 'Please input salary date!',
+          message: 'Please input leave end date!',
         },
       ]}
     >
@@ -362,7 +380,7 @@ const AnnualLeaves = () => {
   </Form>
       </Modal>
       <Modal
-        title="Update Salary"
+        title="Update Annual Leave"
         centered
         open={openNew}
         onOk={handleUpdate}

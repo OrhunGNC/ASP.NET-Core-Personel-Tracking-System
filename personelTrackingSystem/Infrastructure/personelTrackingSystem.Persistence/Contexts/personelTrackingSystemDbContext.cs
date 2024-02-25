@@ -18,6 +18,7 @@ namespace personelTrackingSystem.Persistence.Contexts
         public DbSet<DepartmentEntity> Departments { get; set; }
         public DbSet<AnnualLeaveEntity> AnnualLeaves { get; set; }
         public DbSet<EntryEntity> Entries { get; set; }
+        public DbSet<TeamEntity> Teams { get; set; }
         public DbSet<LateArrivalEntity> LateArrivals { get; set; }
         public DbSet<ProjectEntity> Projects { get; set; }
         public DbSet<SalaryEntity> Salaries { get; set; }

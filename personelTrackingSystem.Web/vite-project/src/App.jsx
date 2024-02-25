@@ -1,25 +1,47 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link,useNavigate  } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
-import { Layout, Menu } from "antd";
+import { Button, Layout, Menu } from "antd";
+import LoginPage from "./Pages/LoginPage";
+import Register from "./Pages/Register";
+import {LogoutOutlined } from "@ant-design/icons"
 
 const { Header, Content, Footer } = Layout;
 
 function App() {
-  const [menuItems, setMenuItems] = useState([]);
-  const [collapsed, setCollapsed] = useState(false);
+  const [role, setRole] = useState(sessionStorage.getItem('role') || '');
+  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem('auth'));
 
-  const items1 = ["Home", "About", "Contact"].map((key) => ({
+
+  useEffect(() => {
+    setRole(sessionStorage.getItem('role') || '');
+    sessionStorage.setItem('auth',sessionStorage.getItem('role')=="")
+    setIsAuthenticated(role!=="");
+  }, []);
+const onLogout = ()=>{
+  console.log("etkinleşti");
+  sessionStorage.clear();
+  setRole(sessionStorage.getItem('role') || '');
+    sessionStorage.setItem('auth',sessionStorage.getItem('role')=="")
+    setIsAuthenticated(role!=="");
+            navigate('/');
+            window.location.reload();
+
+}
+  const items1 = isAuthenticated
+  ? ["Home", "About", "Contact"].map((key) => ({
     key,
     label: (
-      <Link style={{ textDecorationLine: "none " }} to={`/${key}`}>
+      <Link style={{ textDecorationLine: "none " }} to={isAuthenticated ? `/${key}` : '/'}>
         {key}
       </Link>
     ),
-  }));
+  })):"";
+
   return (
     <div>
       <Layout>
@@ -30,7 +52,7 @@ function App() {
           }}
         >
           <div className="demo-logo" />
-          <Link style={{width:'7%',height:'90%',marginRight:'8%'}} to={'/'}><img src="../img/toplogo.png" alt="wissen-logo"  /></Link>
+          <Link style={{width:'7%',height:'90%',marginRight:'8%'}} to={isAuthenticated ? `/Home` : '/'}><img src="../img/toplogo.png" alt="wissen-logo"  /></Link>
           <Menu
             theme="dark"
             mode="horizontal"
@@ -43,13 +65,19 @@ function App() {
               color:'white'
             }}
           />
+           { isAuthenticated===true && (
+              <Button onClick={onLogout}><LogoutOutlined /></Button>
+            )}
+          
         </Header>
         <Content>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Contact" element={<Contact />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/Register" element={<Register />} />
+
+                <Route path="/Home" element={<Home />} />
+                <Route path="/About" element={<About />} />
+                <Route path="/Contact" element={<Contact />} />
           </Routes>
         </Content>
         <Footer

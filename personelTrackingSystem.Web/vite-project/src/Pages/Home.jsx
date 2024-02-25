@@ -10,6 +10,7 @@ import Teams from './HomePages/Teams';
 import Projects from './HomePages/Projects';
 import Personels from './HomePages/Personels';
 import Users from './HomePages/Users';
+import Systems from './HomePages/Systems';
 const { Content,  Sider } = Layout;
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
     sessionStorage.setItem("key", selectedKeys);
 
   }
+  
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -123,6 +125,14 @@ const Home = () => {
             }
             { sessionStorage.getItem("key")==9 && (
               <Users/>
+            )
+            }
+            { (sessionStorage.getItem("key")==10 && sessionStorage.getItem('role')=="Admin") && (
+              <Systems/>
+            )
+            }
+            { (sessionStorage.getItem("key")==10 && sessionStorage.getItem('role')!=="Admin") && (
+              alert("You have to be admin to reach this page!")
             )
             }
 

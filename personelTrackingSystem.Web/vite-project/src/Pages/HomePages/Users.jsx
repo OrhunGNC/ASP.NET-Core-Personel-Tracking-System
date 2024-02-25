@@ -188,10 +188,28 @@ const Users = () => {
           })
           .catch((error)=>console.error(error));
       }
+      const [paginationSize, setPaginationSize] = useState(''); 
+
+
+  const checkScreenSize = () => {
+    const screenHeight = window.innerHeight;
+    if (screenHeight>= 900) { 
+      setPaginationSize(10); 
+    } else {
+      setPaginationSize(7); 
+    }
+  };
+
+  
+  useEffect(() => {
+    checkScreenSize(); 
+    window.addEventListener('resize', checkScreenSize); 
+    return () => window.removeEventListener('resize', checkScreenSize); 
+  }, []);
   return (
     <>
     <Button type='primary' onClick={()=>setOpen(true)}  style={{width:'20%',marginBottom:'1%'}}>Add New User</Button>
-    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:'10'}} />
+    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:paginationSize}} />
     <Modal
         title="Add New User"
         centered
@@ -285,7 +303,7 @@ const Users = () => {
   </Form>
       </Modal>
       <Modal
-        title="Update Department"
+        title="Update User"
         centered
         open={openNew}
         onOk={handleUpdate}

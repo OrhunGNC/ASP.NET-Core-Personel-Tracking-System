@@ -256,12 +256,30 @@ const Projects = () => {
           })
           .catch((error)=>console.error(error));
       }
+      const [paginationSize, setPaginationSize] = useState(''); 
+
+
+  const checkScreenSize = () => {
+    const screenHeight = window.innerHeight;
+    if (screenHeight>= 900) { 
+      setPaginationSize(10); 
+    } else {
+      setPaginationSize(7); 
+    }
+  };
+
+  
+  useEffect(() => {
+    checkScreenSize(); 
+    window.addEventListener('resize', checkScreenSize); 
+    return () => window.removeEventListener('resize', checkScreenSize); 
+  }, []);
   return (
     <>
-    <Button type='primary' onClick={()=>setOpen(true)}  style={{width:'20%',marginBottom:'1%'}}>Add New Annual Leave</Button>
-    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:'10'}} />
+    <Button type='primary' onClick={()=>setOpen(true)}  style={{width:'20%',marginBottom:'1%'}}>Add New Project</Button>
+    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:paginationSize}} />
     <Modal
-        title="Add New Salary"
+        title="Add New Project"
         centered
         open={open}
         onOk={handleNew}
@@ -295,7 +313,7 @@ const Projects = () => {
       rules={[
         {
           required: true,
-          message: 'Please input personel salary!',
+          message: 'Please input personel id!',
         },
       ]}
     >
@@ -369,7 +387,7 @@ const Projects = () => {
   </Form>
       </Modal>
       <Modal
-        title="Update Salary"
+        title="Update Project"
         centered
         open={openNew}
         onOk={handleUpdate}
@@ -398,12 +416,12 @@ const Projects = () => {
     autoComplete="off"
   >
   <Form.Item
-      label="Annual Leave ID"
+      label="Project ID"
       name="id"
       rules={[
         {
           required: true,
-          message: 'Please input personel salary!',
+          message: 'Please input project id!',
         },
       ]}
       hidden
@@ -416,7 +434,7 @@ const Projects = () => {
       rules={[
         {
           required: true,
-          message: 'Please input personel salary!',
+          message: 'Please input personel id!',
         },
       ]}
     >

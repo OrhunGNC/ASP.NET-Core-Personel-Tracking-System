@@ -208,12 +208,30 @@ const Teams = () => {
           })
           .catch((error)=>console.error(error));
       }
+      const [paginationSize, setPaginationSize] = useState(''); 
+
+
+  const checkScreenSize = () => {
+    const screenHeight = window.innerHeight;
+    if (screenHeight>= 900) { 
+      setPaginationSize(10); 
+    } else {
+      setPaginationSize(7); 
+    }
+  };
+
+  
+  useEffect(() => {
+    checkScreenSize(); 
+    window.addEventListener('resize', checkScreenSize); 
+    return () => window.removeEventListener('resize', checkScreenSize); 
+  }, []);
   return (
     <>
-    <Button type='primary' onClick={()=>setOpen(true)}  style={{width:'20%',marginBottom:'1%'}}>Add New Department</Button>
-    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:'10'}} />
+    <Button type='primary' onClick={()=>setOpen(true)}  style={{width:'20%',marginBottom:'1%'}}>Add New Team</Button>
+    <Table columns={columns} dataSource={tableData} onChange={onChange} pagination={{pageSize:paginationSize}} />
     <Modal
-        title="Add New Department"
+        title="Add New Team"
         centered
         open={open}
         onOk={handleNew}
@@ -320,7 +338,7 @@ const Teams = () => {
   </Form>
       </Modal>
       <Modal
-        title="Update Department"
+        title="Update Team"
         centered
         open={openNew}
         onOk={handleUpdate}

@@ -38,7 +38,7 @@ const About = ({ handleMenuItems }) => {
       >
         <div className="container" style={{textAlign:'center'}}>
         <Carousel imageSources={imageSources} />
-        {about}
+        <p style={{marginBottom:'10%',fontSize:'large'}}>{about}</p>
         </div>
       
 

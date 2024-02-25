@@ -179,6 +179,24 @@ const Departments = () => {
       })
       .catch((error) => console.error(error));
   };
+  const [paginationSize, setPaginationSize] = useState(''); 
+
+
+  const checkScreenSize = () => {
+    const screenHeight = window.innerHeight;
+    if (screenHeight>= 900) { 
+      setPaginationSize(10); 
+    } else {
+      setPaginationSize(7); 
+    }
+  };
+
+  
+  useEffect(() => {
+    checkScreenSize(); 
+    window.addEventListener('resize', checkScreenSize); 
+    return () => window.removeEventListener('resize', checkScreenSize); 
+  }, []);
   return (
     <>
       <Button
@@ -192,7 +210,7 @@ const Departments = () => {
         columns={columns}
         dataSource={tableData}
         onChange={onChange}
-        pagination={{ pageSize: "10" }}
+        pagination={{ pageSize: paginationSize }}
       />
       <Modal
         title="Add New Department"
